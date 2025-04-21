@@ -49,7 +49,7 @@ class Category extends Model
 
         $query->with($relations); //se ejecuta el query con lo que tiene $relations en ultimas es el valor en la url de included
 
-        //http://api.codersfree1.test/v1/categories?included=posts
+        //http://api.blog.test/v1/categories?included=posts
 
 
     }
@@ -77,8 +77,8 @@ class Category extends Model
             }
         }
 
-        //http://api.codersfree1.test/v1/categories?filter[name]=depo
-        //http://api.codersfree1.test/v1/categories?filter[name]=posts&filter[id]=2
+        //http://api.blog.test/v1/categories?filter[name]=depo
+        //http://api.blog.test/v1/categories?filter[name]=posts&filter[id]=2
 
     }
 
@@ -105,7 +105,7 @@ class Category extends Model
                 $query->orderBy($sortField, $direction);//ejecutamos la query con la direccion deseada sea 'asc' o 'desc'
             }
         }
-        //http://api.codersfree1.test/v1/categories?sort=name
+        //http://api.blog.test/v1/categories?sort=name
     }
 
     public function scopeGetOrPaginate(Builder $query)

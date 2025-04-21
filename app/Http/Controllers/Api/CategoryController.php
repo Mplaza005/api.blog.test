@@ -15,14 +15,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-       // $categories=Category::all();
-      // $categories = Category::with(['posts.user','posts'])->get();
-      // $categories = Category::included()->get();
+
        $categories=Category::included()->filter()->get();
        //$categories=Category::included()->filter()->sort()->get();
        //$categories=Category::included()->filter()->sort()->getOrPaginate();
-       return $categories;
-        return response()->json($categories);
+
+       return response()->json($categories);
     }
 
     /**
@@ -96,3 +94,7 @@ class CategoryController extends Controller
         return response()->json($category);
     }
 }
+
+// $categories=Category::all();
+      // $categories = Category::with(['posts.user','posts'])->get();
+      // $categories = Category::included()->get();
